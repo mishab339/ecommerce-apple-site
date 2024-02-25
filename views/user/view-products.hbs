@@ -1,0 +1,60 @@
+ {{!-- <section>
+    <div class="container py-5">
+        <h1 class="text-center">Popular Products</h1>
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-4 p-3">
+                <div class="card">
+                    <img src="/product-images/{{this._id}}.png" class="card-image-top" style="height: 12rem;"  alt="..." >
+                <div class="card-body">
+                    <h4 class="cart-titel">Apple</h4>
+                    <h5 class="card-title">{{this.Name}}</h5>
+                                <p class="card-text">{{this.Discription}}</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="d-flex justify-content-around mb-5">
+                            <h2>Rs.{{this.Price}}</h2>
+                            {{!-- WITH OUT USING AJAX --}}
+                        {{!-- <a href="/add-to-cart/{{this._id}}" class="btn btn-primary">Add to cart</a> --}}
+                        {{!-- WITH USING AJAX --}}
+                            {{!-- <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to cart</button>
+                        </div>     
+                        </div>
+                        </div>
+                    </div>
+            {{/each}}
+        </div>
+    </div>
+</section>  --}}
+<section>
+    <div class="container">
+        <h1 class="title text-center py-4">Products</h1>
+        <div class="row">
+             {{#each products}}
+            <div class="col-md-3 d-flex justify-content-center">
+                <div class="card m-2 cb1 text-center view-products-card">
+                   <img src="/product-images/{{this._id}}.png" class="card-image-top" alt="..." >
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.Name}}</h5>
+                        <p class="card-text">{{this.Discription}}</p>
+                         <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                             <i class="far fa-star"></i>
+                        </div>
+                        <h5 class="card-text">Rs.{{this.Price}}</h5>
+                        <button onclick="addToCart('{{this._id}}')" class="btn btn-outline-light add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+             {{/each}}
+        </div>
+    </div>
+</section>

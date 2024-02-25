@@ -1,0 +1,48 @@
+.content-table-of-carts{
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba( 0, 0 , 0, 0.15);
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5);
+    border-top-color: rgba(225, 225, 225, 0.5);
+    border-left-color: rgba(225, 225, 225, 0.5);
+    border-bottom-color: rgba(225, 225, 225, 0.5);
+    border-right-color: rgba(225, 225, 225, 0.5);
+}
+.content-table-of-carts thead tr{
+    background: rgb(38,46,48);
+    background: linear-gradient(90deg, rgba(38,46,48,1) 23%, rgba(39,99,110,0.865983893557423) 55%, rgba(8,165,241,1) 100%);
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.content-table-of-carts th,
+.content-table-of-carts td{
+    padding: 12px 15px;
+    color: #ffffff;
+}
+.content-table-of-carts tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table-of-carts tbody tr:last-of-type{
+    border-bottom: 2px solid #889879;
+}
+.place-order-button{
+    background: rgb(65,108,71);
+    background: linear-gradient(90deg, rgba(65,108,71,1) 13%, rgba(32,212,37,0.865983893557423) 51%, rgba(83,111,187,1) 100%);
+    margin-left: 15px;
+}
+.cart-item-count{
+    width: 2rem;
+}
+#dropdownMenuButton1{
+    background:  rgb(38,46,48);
+    background: linear-gradient(90deg, rgba(38,46,48,1) 23%, rgba(39,99,110,0.865983893557423) 55%, rgba(8,165,241,1) 100%);
+    color: white;
+}

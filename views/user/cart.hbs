@@ -1,0 +1,83 @@
+<section>
+    <div class="col-md-12">
+ <div class="container content-table-of-carts">
+        <table class="table mt-5 ">
+            <thead>
+                <tr>
+                    <th scope="col" >Item</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each products}}
+                <tr>
+                    <td><img style="width: 70px;height: 70px;" src="/product-images/{{this.product._id}}.png" alt=""></td>
+                    <td>{{this.product.Name}}</td>
+                    <td>{{this.product.Price}}</td>
+                    <td>
+                        <button class="cart-item-count me-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',-1)">-</button>
+                        <span id="{{this.product._id}}">{{this.quantity}}</span>
+                        <button class="cart-item-count ms-3" onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user._id}}',1)">+</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" onclick="removeCart('{{this._id}}','{{this.product._id}}')">Remove</button>
+                        {{!-- <a href="/remove-cart-items/{{this._id}}/{{this.product._id}}" class="btn btn-danger">Remove</a> --}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        <hr>
+        <div class="float-end pe-5">
+            <h5 class="me-5 text-danger">TOTAL:RS:<span id="total">{{this.totalValue}}</span></h5>
+            <button class="btn btn-success mt-3 mb-3 place-order-button"><a href="/place-order" style="text-decoration: none;color:white;" ><b>Place Order</b></a></button>
+         
+        </div>
+    </div>  
+    </div>
+   
+</section>
+
+<script>
+    function changeQuantity(cartId,prodId,userId,count){
+        let quantity = parseInt(document.getElementById(prodId).innerHTML);
+        count=parseInt(count);
+        $.ajax({
+            url:'/change-product-quantity',
+            data:{
+                user:userId,
+                cart:cartId,
+                product:prodId,
+                count:count,
+                quantity:quantity
+            },
+            method:'post',
+            success:(response)=>{
+                if(response.removeProduct){
+                    alert('Product removed from the cart');
+                    location.reload();
+                }else{
+                    document.getElementById(prodId).innerHTML=quantity+count; 
+                    document.getElementById('total').innerHTML=response.total  
+                }
+               
+            }
+        })
+    }
+    function removeCart(cartId,prodId){
+        $.ajax({
+            url:'/remove-cart-items',
+            data:{
+                cartId,
+                prodId
+            },
+            method:'get',
+            success:(response)=>{
+                alert('are you sure ?');
+                location.reload();
+            }
+        })
+    }
+</script>

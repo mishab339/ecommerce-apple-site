@@ -1,0 +1,25 @@
+{
+  "name": "signup-using-mongodb",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon --delay 2 ./bin/www "
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "ccxt": "^4.2.19",
+    "cookie-parser": "~1.4.6",
+    "debug": "~4.3.4",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "http-errors": "~2.0.0",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0",
+    "morgan": "~1.10.0",
+    "promise": "^8.3.0",
+    "razorpay": "^2.9.2"
+  }
+}

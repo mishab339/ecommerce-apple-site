@@ -1,0 +1,51 @@
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+                  <div>
+                    <a href="#"><img style="width: 50px;,height: 50px; mix-blend-mode:lighten" src="/images/logo.jpg" alt=""></a>
+                  </div>
+                  <div style="margin-left: 5px;">
+                      <a class="navbar-brand" href="#">Admin Panel</a>
+                  </div>
+                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end flex-grow-1 pe-5">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/admin">All Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/all-orders">All Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/all-users">All Users</a>
+                        </li>
+                    </ul>
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  {{#if admin}}
+  Admin
+    {{!-- {{admin.Name}} --}}
+    {{!-- {{else}}
+    Admin --}}
+  {{/if}}
+  
+   
+  </button>
+  <ul class="dropdown-menu bg-transparent" aria-labelledby="dropdownMenuButton1">
+    {{#if admin}}
+    <button id="user-header-logout-button" class="rouded-pill" style="width: 6rem;"><a class="dropdown-item text-white px-3 py-1"  href="/admin/logout">Log Out</a></button>
+    {{else}}
+    <button id="user-header-login-button" class="rounded-pill" style="width: 6rem;"><a class="dropdown-item text-white px-3 py-1" href="/admin/login">Log in</a></button>
+    {{/if}}
+    
+  </ul>
+</div>
+       
+                </div>
+            </div>
+        </nav>
+    </header>

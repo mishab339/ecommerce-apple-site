@@ -1,0 +1,50 @@
+
+     <div class="container-fluid" id="user-login-container">
+    <form class="mx-auto user-login mt-5" id="formValidation" method="post" action="/admin/login">
+    <h4 class="text-center user-login-header " style="color:white;">Login</h4>
+     {{#if loginError}}
+            <p class="error text-danger">{{loginError}}</p>
+     {{/if}}
+  <div class="mb-3 mt-5">
+    <label for="Email" class="form-label user-login-form-label">Email address</label>
+    <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="Password" class="form-label user-login-form-label">Password</label>
+    <input type="password" class="form-control" id="Password" name="Password">
+    <div id="emailHelp" class="form-text">Forgot Password?</div>
+  </div>
+  <button type="submit" class="btn btn-primary user-login-login-btn">Login</button>
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  <script>
+        $(function(){
+            var $registrationForm = $('#formValidation');
+            if($registrationForm.length){
+                $registrationForm.validate({
+                    rules:{
+                        Email:{
+                            required:true,
+                            email:true
+                        },
+                        Password:{
+                            required:true,
+                            pwcheck:true,
+                            minlength:4
+                        }
+                    },
+                    messages:{
+                        Email:{
+                            required:"Email id is mandatory",
+                            email:"please enter a valid email id"
+                        },
+                        Password:{
+                            required:"password is required"
+                        }
+                    }
+                })
+            }
+        })
+    </script> 

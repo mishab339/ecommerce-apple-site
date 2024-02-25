@@ -1,0 +1,17 @@
+#checkout-form{
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 15px;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    backdrop-filter: blur(1rem);
+    box-shadow: 1.3rem 1.3rem 1.3rem rgba(0,0,0,0.5);
+    border-top-color: rgba(225, 225, 225, 0.5);
+    border-left-color: rgba(225, 225, 225, 0.5);
+    border-bottom-color: rgba(225, 225, 225, 0.5);
+    border-right-color: rgba(225, 225, 225, 0.5);
+}
+.place-order-checkout-button{
+    background: rgb(38,46,48);
+    background: linear-gradient(90deg, rgba(38,46,48,1) 23%, rgba(39,99,110,0.865983893557423) 55%, rgba(8,165,241,1) 100%);
+}

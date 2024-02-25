@@ -1,0 +1,34 @@
+<section>
+    <div class="container order-details-container mt-5">
+        <h4 class="text-center user-login-header mt-4">All Users</h4>
+        <table class="table mt-5" id="userTable">
+            <thead>
+                <tr>
+                    <th scope="col">Number</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>orders</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each userDetails}}
+                <tr>
+                    <td>1</td>
+                    <td>{{this.Name}}</td>
+                    <td>{{this.Email}}</td>
+                    <td>
+                        <a class="btn btn-primary view-products-button" href="/admin/view-user-order-details/{{this._id}}">Orders</a>
+                    </td>
+                    <td>{{../status.status}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+<script>
+  $(document).ready( function () {
+    $('#userTable').DataTable();
+} );
+</script>

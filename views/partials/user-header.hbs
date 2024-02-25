@@ -1,0 +1,51 @@
+ <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <div class="container-fluid">
+                <div>
+                    <a href="#"><img style="width: 50px;,height: 50px; mix-blend-mode:lighten" src="/images/logo.jpg" alt=""></a>
+                   
+                </div>
+                 <a class="navbar-brand " href="/">Apple</a>
+                {{!-- toggle button --}}
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-5" style="font-size: 20px;"> 
+                        <li class="nav-item">
+                            <a class="nav-link active"  aria-current="page" href="/">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="/cart">Cart<span class="badge badge-success" id="cart-count">{{cartCount}}</span></a>
+                        </li>
+                        {{#if user}}
+                        <li class="nav-item">
+                            <a class="nav-link"  href="/orders">Orders</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+<div class="dropdown">
+    <div>
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  {{#if user}}
+    {{user.Name}}
+    {{else}}
+    Account
+  {{/if}}
+  </button>
+  <ul class="dropdown-menu bg-transparent"  aria-labelledby="dropdownMenuButton1">
+    {{#if user}}
+    <button id="user-header-logout-button" class="rounded-pill"><a class="dropdown-item text-white px-3 py-1" href="/logout">Log Out</a></button>
+    {{else}}
+    <button id="user-header-login-button" class="rounded-pill"><a class="dropdown-item text-white px-3 py-1" href="/login">Log in</a></button>
+    {{/if}}
+</ul>
+    </div>
+  
+</div>
+                </div>
+            </div>
+        </nav>
+    </header>

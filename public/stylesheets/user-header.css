@@ -1,0 +1,36 @@
+.navbar-brand{
+    font-size: 30px;
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+.nav-link::after{
+    content:'' ;
+    width: 0%;
+    height: 2px;
+    display: block;
+    margin: auto;
+    background:white;
+    transition: 0.5s;
+}
+.nav-link:hover::after{
+    width: 100%;
+}
+#user-header-logout-button{
+    width: 7rem;
+    height: 3rem;
+    background: rgb(38,46,48);
+    background: linear-gradient(90deg, rgba(38,46,48,1) 23%, rgba(39,99,110,0.865983893557423) 55%, rgba(8,165,241,1) 100%);
+    border: none;
+    border-radius: 50px; 
+}
+#user-header-login-button{
+    width: 7rem;
+    height: 3rem;
+    background: rgb(38,46,48);
+    background: linear-gradient(90deg, rgba(38,46,48,1) 23%, rgba(39,99,110,0.865983893557423) 55%, rgba(8,165,241,1) 100%);
+    border: none;
+    border-radius: 50px; 
+}
+.dropdown-item:hover{
+ background: transparent;   
+}
